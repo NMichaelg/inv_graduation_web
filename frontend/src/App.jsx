@@ -256,7 +256,7 @@ export default function App() {
 - Tăng 2 5pm to 7pm : nhậu + bbq đến 7pm (Bogo BBQ Buffet - Quận 3)
 - Tăng 3 7pm to 9pm : karaoke xong vác đít đi về (Karaoke KTV 199 Điện Biên Phủ)
 
-Oh yea I got some gifts for ya , some self records and buttons on the left corners"
+Oh yea I got some gifts for ya , some self records and buttons at the left corners"
       contact="0941930803"
     />
   )
