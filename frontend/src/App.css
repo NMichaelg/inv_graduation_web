@@ -1,0 +1,319 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Invitation styles - portfolio-like two-column layout */
+.inv-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, #0f1720 0%, #121217 60%);
+  position: relative;
+}
+
+.inv-music-btn {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 50;
+}
+
+.inv-music-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.inv-music-btn:active {
+  transform: scale(0.95);
+}
+
+.inv-surprise-btn {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  z-index: 70;
+}
+
+.inv-surprise-btn:hover { transform: scale(1.05); }
+
+/* Christmas theme */
+.inv-root.christmas {
+  background: linear-gradient(180deg, #2a2f0b 0%, #3b0b0b 100%);
+  color: #fffbe6;
+}
+.inv-root.christmas .inv-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border-color: rgba(255,255,255,0.06);
+}
+.inv-root.christmas .inv-page-title,
+.inv-root.christmas .inv-name {
+  color: #fffdf2;
+}
+
+/* subtle snow overlay */
+.inv-root.christmas::after {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.06;
+  mix-blend-mode: screen;
+}
+
+/* Christmas audio styling (hidden) */
+.inv-christmas-audio {
+  display: none;
+}
+
+/* Snowfall effect */
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 80;
+}
+.flake {
+  position: absolute;
+  top: -10vh;
+  background: white;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  animation-name: fall, sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}
+
+@keyframes sway {
+  0% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(18px) rotate(45deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+.inv-thank-you {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  pointer-events: none;
+  animation: fadeIn 1s ease-out 0s forwards, fadeOut 1s ease-in 3s forwards;
+  opacity: 0;
+}
+
+.inv-thank-you-text {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+}
+
+.inv-title-top {
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: fadeIn 1s ease-out 3s forwards;
+  opacity: 0;
+}
+
+.inv-page-title {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.inv-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0;
+  align-items: stretch;
+  max-width: 1100px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 0;
+  border-radius: 14px;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+.inv-card-fade {
+  animation: fadeIn 1s ease-out 6s forwards;
+  opacity: 0;
+}
+
+.inv-photo-side {
+  position: relative;
+  background: linear-gradient(180deg, #101216 0%, #0b0b0d 100%);
+  display: block;
+}
+
+.inv-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inv-photo {
+  transition: opacity 1s ease-in-out;
+}
+
+.inv-info {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.inv-player {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0 1rem 0;
+}
+.inv-player-meta {
+  display: flex;
+  flex-direction: column;
+}
+.inv-player-title {
+  color: rgba(255,255,255,0.95);
+  font-weight: 600;
+}
+.inv-player-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+}
+.inv-player-audio {
+  height: 34px;
+}
+.inv-player-download {
+  color: rgba(255,255,255,0.88);
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.inv-header { text-align: left }
+
+.inv-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 2.05rem;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.inv-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+.inv-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.inv-place, .inv-time {
+  margin: 0;
+  font-size: 0.98rem;
+  color: rgba(255,255,255,0.88);
+}
+
+.inv-place-strikethrough {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.inv-note {
+  margin: 0 0 1.25rem 0;
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  /* preserve newlines in the note text */
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.inv-contact {
+  margin-top: auto;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Responsive: stack on small screens and make photo bigger */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .inv-card {
+    grid-template-columns: 1fr;
+  }
+  .inv-info { padding: 1.5rem }
+  .inv-name { font-size: 1.5rem }
+}
+
+
