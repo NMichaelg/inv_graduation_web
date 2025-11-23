@@ -134,7 +134,7 @@ function Invitation({
         🎁
       </button>
       <div className="inv-thank-you">
-        <p className="inv-thank-you-text">An invitation to you guys </p>
+        <p className="inv-thank-you-text">An invitation for you guys </p>
       </div>
       
       <div className="inv-title-top">
@@ -256,7 +256,7 @@ export default function App() {
 - Tăng 2 5pm to 7pm : nhậu + bbq đến 7pm (Bogo BBQ Buffet - Quận 3)
 - Tăng 3 7pm to 9pm : karaoke xong vác đít đi về (Karaoke KTV 199 Điện Biên Phủ)
 
-Oh yea I got some gift for ya , some self records and click the present button bottom at left corner "
+Oh yea I got some gifts for ya , some self records and buttons on the left corners"
       contact="0941930803"
     />
   )
