@@ -124,8 +124,8 @@ function Invitation({
 
   return (
     <main className={`inv-root ${isChristmas ? 'christmas' : ''}`}>
-      <audio ref={audioRef} loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      <audio ref={audioRef} loop autoPlay>
+        <source src="/solo1.m4a" type="audio/mpeg" />
       </audio>
       <button className="inv-music-btn" onClick={toggleMusic} title={isPlaying ? 'Turn off music' : 'Turn on music'}>
         {isPlaying ? '♪' : '✕'}
@@ -134,7 +134,7 @@ function Invitation({
         🎁
       </button>
       <div className="inv-thank-you">
-        <p className="inv-thank-you-text">Thank you for being part of my journey</p>
+        <p className="inv-thank-you-text">An invitation to you guys </p>
       </div>
       
       <div className="inv-title-top">
@@ -156,7 +156,6 @@ function Invitation({
             <p className="inv-place">📍 {place}</p>
             <p className="inv-time">⏰ {time}</p>
           </div>
-
           <p className="inv-note">{note}</p>
 
           <div className="inv-player">
@@ -168,13 +167,30 @@ function Invitation({
               ref={trackRef}
               controls
               className="inv-player-audio"
-              src="/a_gift.mp3"
+              src="/talktpme3.m4a"
               onPlay={handleTrackPlay}
               onEnded={handleTrackEnded}
             >
               Your browser does not support the audio element.
             </audio>
-            <a className="inv-player-download" href="/a_gift.mp3" download>
+            <a className="inv-player-download" href="/talktpme3.m4a" download>
+              Download
+            </a>
+          </div>
+
+          <div className="inv-player">
+            <div className="inv-player-meta">
+              <strong className="inv-player-title">And another one</strong>
+              <span className="inv-player-sub">— Michael</span>
+            </div>
+            <audio
+              controls
+              className="inv-player-audio"
+              src="/pent.m4a"
+            >
+              Your browser does not support the audio element.
+            </audio>
+            <a className="inv-player-download" href="/pent.m4a" download>
               Download
             </a>
           </div>
@@ -232,14 +248,15 @@ export default function App() {
   return (
     <Invitation
       name="Nguyễn Minh Bảo Ân (Michael)"
-      title="Graduation Ceremony"
-      place="268 Đ. Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh"
-      place2="77 Massachusetts Avenue, Cambridge, MA 02139, United States"
-      time="Sunday, November 30 2025 — 3:20 PM"
-      note=" Tăng 1 3:30 pm to 5pm : ở trường quậy 
-      Tăng 2 5pm to 7pm : nhậu + bbq đến 7pm  
-      Tăng 3 7pm to 9pm : karaoke  vác đít đi về
-      Oh yea I got some gift for ya, some self record and click the present box "
+      title="Graduation Ceremony (Lễ tốt nghiệp)"
+      place="Đại học Bách Khoa Tòa A4 268 Đ. Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh"
+      place2="77 Massachusetts Avenue, Cambridge, MA 02139, United States, Sep 31st 10am GMT-5"
+      time="Sunday, November 30 2025 — 3:20 PM UTC+7 "
+      note="- Tăng 1 3:30 pm to 5pm : ở trường quậy 
+- Tăng 2 5pm to 7pm : nhậu + bbq đến 7pm (Bogo BBQ Buffet - Quận 3)
+- Tăng 3 7pm to 9pm : karaoke xong vác đít đi về (Karaoke KTV 199 Điện Biên Phủ)
+
+Oh yea I got some gift for ya , some self records and click the present button bottom at left corner "
       contact="0941930803"
     />
   )
